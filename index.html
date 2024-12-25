@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wordle Online</title>
+
+    <link rel="stylesheet" href="styles.css">
+    <script src="game.js" defer></script>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="filler"></div>
+            <h1>Wordle Online</h1>
+            <div class="header-buttons">
+                <button class="svg-button svg-button-reload"><img src="assets/realod.png" alt=""><div class="tooltip reload-tooltip">Generate new word</div></button>             
+                <button class="svg-button svg-button-language">
+                    <div class="tooltip language-tooltip">Change language</div>
+                    <img class="svg-button-language-img">
+                </button>
+            </div>
+        </header>
+
+        <div class="game">
+
+        </div>
+
+        <div class="endgameWindow-wrapper">
+            <div class="endgameWindow">
+                <div class="endgameWindow-message">
+                    <div class="endgameWindow-message-sub">Вы отгадали слово:</div>
+                    <div class="endgameWindow-message-word">СОЛНЦЕ</div>
+                </div>
+                <div class="endgameWindow-attempts"><div class="endgameWindow-attempts-text">Количество попыток:</div> <div class="endgameWindow-attempts-number">4</div></div>
+                <button class="endgameWindow-playAgain">Играть снова</button>
+            </div>
+        </div>
+
+        <div class="errorWindow-wrapper">
+            <div class="errorWindow">
+                Такого слова не существует
+            </div>
+        </div>
+        <div class="keyBoard"></div>
+    </div>
+    <div class="madeBy" style="display: flex; gap: 1rem;">
+        <div>© Made by <a href="https://github.com/DR8off" target="_blank">DR8</a></div>
+        <div>Portfolio <a href="https://dr8off.github.io/portfolio/" target="_blank">DR8.com</a></div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,289 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Roboto;
+    background-color: #151922;
+    color: white;
+    overflow: hidden;
+}
+html {
+    overflow: hidden;
+}
+
+a {
+    color: rgb(0, 162, 255);
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+.header-buttons {
+    display: flex;
+    gap: 2rem;
+    height: fit-content;
+}
+
+.svg-button-reload {
+    position: relative;
+}
+.svg-button-reload:hover .reload-tooltip {
+    opacity: 1;
+    transform: translateX(-50%) translateY(0);
+}
+.tooltip {
+    position: absolute;
+    bottom: -3rem;
+    left: 50%;
+    transform: translateX(-50%) translateY(20%);
+    padding: 0.5rem 1rem;
+    border-radius: 0.4rem;
+    color: white;
+    background-color: #252b37;
+    opacity: 0;
+    pointer-events: none;
+    transition: 0.4s;
+    white-space: nowrap;
+}
+
+.svg-button-language:hover .language-tooltip {
+    opacity: 1;
+    transform: translateX(-50%) translateY(0);
+}
+
+.filler {
+    width: 96px;
+    height: 1rem;
+}
+
+img {
+    width: 2rem;
+    height: 2rem;
+}
+.svg-button {
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+.container {
+    max-width: 45rem;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 4rem;
+    padding: 2rem 0;
+}
+
+h1 {
+    font-size: 3rem;
+}
+
+.game {
+    display: flex;
+    flex-direction: column;
+    gap: 0.3rem;
+}
+.gameRow {
+    display: flex;
+    gap: 0.3rem;
+}
+
+.gameRow-cell {
+    width: 4rem;
+    height: 4rem;
+    border-radius: 0.5rem;
+    font-size: 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #4c4d51;
+}
+.gameRow-anim {
+    animation: bounce 0.5s;
+}
+@keyframes bounce {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.1);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+.keyBoard {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    max-width: 40rem;
+    width: 100%;
+    flex-wrap: wrap;
+    align-items: center;
+}
+.keyBoard-row {
+    display: flex;
+    gap: 0.5rem;
+}
+.keyBoard-row-button {
+    width: 3rem;
+    height: 2.5rem;
+    font-size: 1.5rem;
+    border-radius: 0.4rem;
+    border: none;
+    background-color: #818183;
+    color: white;
+    transition: 0.2s;
+}
+.keyBoard-row-button-wrongLetter {
+    background-color: #405067;
+}
+.keyBoard-row-button-hasLetter {
+    background-color: #e0c327;
+}
+.keyBoard-row-button-spottedLetter {
+    background-color: #33ab26;
+}
+.keyBoard-row-button:hover {
+    background-color: #757578;
+    cursor: pointer;
+}
+.keyBoard-row-button:active {
+    background-color: #c4c7cf;
+    transform: scale(0.95);
+}
+
+/* Statuses */
+.hasLetter {
+    background-color: #e0c327;
+    color: white;
+}
+.correctLetter {
+    background-color: #33ab26;
+    color: white;
+}
+.wrongLetter {
+    background-color: #414f6a;
+    color: white;
+}
+
+
+.endgameWindow-wrapper {
+    position: absolute;
+    width: 100vw;
+    height: 100dvh;
+    background-color: rgba(0, 0, 0, 0.242);
+    display: none;
+    align-items: center;
+    justify-content: center;
+    left: 0;
+    top: 0;
+}
+.endgameWindow {
+    width: 30rem;
+    background-color: #252b37;
+    border-radius: 0.4rem;
+    padding: 5rem 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 4rem;
+}
+.endgameWindow-message {
+    font-size: 1.5rem;
+    text-align: center;
+}
+.endgameWindow-message-word {
+    color: #33ab26;
+    font-size: 4rem;
+    font-weight: 600;
+}
+.endgameWindow-attempts {
+    display: flex;
+    font-size: 1.5rem;
+    gap: 0.5rem;
+}
+.endgameWindow-playAgain {
+    border-radius: 0.4rem;
+    background-color: white;
+    border: none;
+    padding: 0.5rem 2rem;
+    font-size: 1.4rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.2s;
+}
+.endgameWindow-playAgain:hover {
+    background-color: rgb(229, 229, 229);
+}
+.endgameWindow-playAgain:active {
+    background-color: rgb(205, 205, 205);
+    transform: scale(0.98);
+}
+.endgameWindow-open {
+    display: flex;
+}
+
+.errorWindow-wrapper {
+    width: 100vw;
+    height: 100dvh;
+    background-color: rgba(0, 0, 0, 0.242);
+    display: none;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+.errorWindow {
+    background-color: #252b37;
+    padding: 2rem 3rem;
+    border-radius: 0.4rem;
+    color: white;
+}
+.errorWindow-show {
+    display: flex;
+}
+
+
+.madeBy {
+    position: absolute;
+    bottom: 2rem;
+    left: 50%;
+    transform: translateX(-50%);
+}
+.madeBy div {
+    white-space: nowrap;
+}
+
+/* Language */
+.svg-button-language {
+    position: relative;
+    color: white;
+}
+
+
+/* Adaptive *************************************************** */
+@media (max-width: 750px) {
+    .filler {
+        display: none;
+    }
+    h1 {
+        font-size: 2rem;
+    }
+    header {
+        padding: 0 1.5rem;
+    }
+    .keyBoard-row-button {
+        width: 1.5rem;
+    }
+}
